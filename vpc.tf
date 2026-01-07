@@ -4,7 +4,7 @@ locals {
   }
 
   private_subnets = {
-    for key, config in var.subnet_config : key => config if !config.public 
+    for key, config in var.subnet_config : key => config if !config.public
   }
 }
 
@@ -29,7 +29,7 @@ resource "aws_subnet" "this" {
   map_public_ip_on_launch = each.value.map_public_ip_on_launch
 
   tags = {
-    Name = "${var.vpc_name}-${each.key}"
+    Name   = "${var.vpc_name}-${each.key}"
     Access = each.value.public ? "Public" : "Private"
   }
 

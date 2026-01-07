@@ -26,10 +26,10 @@ output "vpc_id" {
 
 output "public_subnets" {
   description = "The ID and the availability zone of the public subnets"
-  value = local.output_public_subnets
+  value       = local.output_public_subnets
 }
 
 output "private_subnets" {
   description = "The ID and the availability zone of the private subnets"
-  value = local.output_private_subnets
+  value       = local.output_private_subnets
 }
